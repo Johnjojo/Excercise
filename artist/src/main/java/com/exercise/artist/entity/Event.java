@@ -1,18 +1,43 @@
-package com.exercise.entity;
+package com.exercise.artist.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Event implements Serializable {
 	
+	@JsonProperty("title")
 	String title;
+	@JsonProperty("dateStatus")
 	String dateStatus;
+	@JsonProperty("id")
 	String id;
+	@JsonProperty("timeZone")
 	String timeZone;
+	@JsonProperty("startDate")
 	Date startDate;
-	String[] artists;
-	String venueId;
+	@JsonProperty("artists")
+	List<Artist> artists;
+	@JsonProperty("hiddenFromSearch")
 	boolean hiddenFromSearch;
+	@JsonProperty("venue")
+	Venue venue;
+	
 	public String getTitle() {
 		return title;
 	}
@@ -43,23 +68,24 @@ public class Event implements Serializable {
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
-	public String[] getArtists() {
+	
+	public List<Artist> getArtists() {
 		return artists;
 	}
-	public void setArtists(String[] artists) {
+	public void setArtists(List<Artist> artists) {
 		this.artists = artists;
-	}
-	public String getVenueId() {
-		return venueId;
-	}
-	public void setVenueId(String venueId) {
-		this.venueId = venueId;
 	}
 	public boolean isHiddenFromSearch() {
 		return hiddenFromSearch;
 	}
 	public void setHiddenFromSearch(boolean hiddenFromSearch) {
 		this.hiddenFromSearch = hiddenFromSearch;
+	}
+	public Venue getVenue() {
+		return venue;
+	}
+	public void setVenue(Venue venue) {
+		this.venue = venue;
 	}
 	
 	

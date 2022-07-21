@@ -1,4 +1,4 @@
-package com.exercise.entity;
+package com.exercise.artist.entity;
 
 import java.io.Serializable;
 
