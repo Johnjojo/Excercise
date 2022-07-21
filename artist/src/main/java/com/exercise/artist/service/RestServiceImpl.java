@@ -1,13 +1,11 @@
 package com.exercise.artist.service;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,7 +13,6 @@ import com.exercise.artist.entity.Artist;
 import com.exercise.artist.entity.Event;
 import com.exercise.artist.entity.Venue;
 import com.exercise.artist.exception.APIResourceNotFoundException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
 public class RestServiceImpl implements RestService {
